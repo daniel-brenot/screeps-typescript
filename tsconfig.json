@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es6",
+    "target": "es2018",
+    "outDir": "jssrc",
     "removeComments": true,
     "noEmitOnError": true,
     "noResolve": false,
@@ -9,20 +10,15 @@
     "noUnusedParameters": true,
     "noUnusedLocals": true,
     "sourceMap": true,
-    "baseUrl": "./src/"
+    "sourceRoot": "src",
+    "baseUrl": "src/",
+    "paths": {
+      "*": [ "*", "screeps/*" ]
+    }
   },
   "compileOnSave": false,
   "include": [
-    "webpack.config.ts",
-    "config/*.ts",
-    "libs/*.ts",
-    "typings/**/*.d.ts",
     "src/**/*.ts",
     "src/**/*.d.ts"
-  ],
-  "exclude": [
-    "dist",
-    "node_modules",
-    "src/snippets"
   ]
 }
