@@ -4,15 +4,20 @@ import { HarvesterCreep } from "harvester.creep";
 import { UpgraderCreep } from "upgrader.creep";
 import { ring } from "builder.util";
 import { CREEP_ROLE } from "data";
+import { SimpleHarvesterCreep } from "harvester-simple.creep";
+import { SimpleUpgraderCreep } from "upgrader-simple.creep";
+
 //import { ring } from "builder.util";
 
 // const ROOM_WIDTH = 50;
 // const ROOM_HEIGHT = 50;
 
 const ROLE_MAP: Record<string, typeof BaseCreep> = {
+    [CREEP_ROLE.SIMPLEHARVESTER]: SimpleHarvesterCreep,
+    [CREEP_ROLE.SIMPLEUPGRADER]: SimpleUpgraderCreep,
     [CREEP_ROLE.HARVESTER]: HarvesterCreep,
     [CREEP_ROLE.BUILDER]: BuilderCreep,
-    [CREEP_ROLE.UPGRADER]: UpgraderCreep
+    [CREEP_ROLE.UPGRADER]: UpgraderCreep,
 };
 
 
@@ -85,6 +90,9 @@ function planBuildings(room: Room) {
     } else if (controllerLevel === 3) {
         // 10 extensions, 1 tower
         createExtensions(room, 10);
+    } else if (controllerLevel === 4) {
+        // 10 extensions, 1 tower
+        createExtensions(room, 15);
     }
 }
 
