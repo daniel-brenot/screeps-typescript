@@ -1,0 +1,6 @@
+
+export enum CREEP_ROLE {
+  HARVESTER,
+  BUILDER,
+  UPGRADER
+}

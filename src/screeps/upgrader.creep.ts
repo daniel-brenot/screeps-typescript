@@ -31,4 +31,6 @@ export class UpgraderCreep extends BaseCreep {
       }
     }
   }
+
+  static getNumRequired(room: Room): number{ room;return 5; }
 }

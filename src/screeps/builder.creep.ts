@@ -12,7 +12,6 @@ export class BuilderCreep extends BaseCreep {
   static run(creep: BuilderCreep): void {
     if (creep.memory.building && creep.store[RESOURCE_ENERGY] == 0) {
       creep.memory.building = false;
-      creep.say('🔄 harvest');
     }
     if (!creep.memory.building && creep.store.getFreeCapacity() == 0) {
       creep.memory.building = true;
@@ -34,4 +33,11 @@ export class BuilderCreep extends BaseCreep {
       }
     }
   }
+
+  /** Gets the number of creeps with this role needed at the moment */
+  static getNumRequired(room: Room): number{
+    // Based on the number of buildings that need to be built
+    return room.find(FIND_CONSTRUCTION_SITES).length;
+  }
+
 }

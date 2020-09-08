@@ -3,6 +3,7 @@
 
 # Ignore basic folders
 /dist
+/jssrc
 /node_modules
 
 # Screeps config file
